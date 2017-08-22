@@ -17,12 +17,7 @@ namespace WindowsFormsApp19
             InitializeComponent();
             read();
         }
-        // CRUDEntities db = new CRUDEntities();
         CRUDEntities1 db = new CRUDEntities1();
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
         void read()
         {
             var elems = db.Categories.ToList();
@@ -38,27 +33,19 @@ namespace WindowsFormsApp19
                 TableID.Items.Add(item.Id);
 
             }
+            foreach (var item in elems2)
+            {
+                UTableID.Items.Add(item.Id);
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //string ISBNData = ISBN.Text;
-            //string PublishDateData = PublishDate.Text; 
-            //if (string.IsNullOrEmpty(BookData) || string.IsNullOrEmpty(ISBNData) || string.IsNullOrEmpty(PublishDateData))
-            //{
-            //    MessageBox.Show("Bosh Buraxma");
-            //    return;
-            //}
-            
             Category Cat = new Category();
-            //bugunun.book_name = BookData;
-            //bugunun.ISBN = Convert.ToInt32(ISBNData);
-            //bugunun.Publish_date = DateTime.Parse(PublishDateData);
             Cat.Name = ProjectName.Text;
             db.Categories.Add(Cat);
             db.SaveChanges();
-            //read();
-
         }
 
         private void CreateGallery_Click(object sender, EventArgs e)
@@ -75,8 +62,6 @@ namespace WindowsFormsApp19
             read();
         }
 
-        
-
         private void TableName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32((sender as ComboBox).SelectedItem);
@@ -86,49 +71,43 @@ namespace WindowsFormsApp19
             RStartDate.Text = id1.Start_Date.ToString();
             RFinishDate.Text = id1.Finish_Date.ToString();
             RAddDate.Text = id1.Add_Date.ToString();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
-        //private void idData_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    int id = Convert.ToInt32((sender as ComboBox).SelectedItem);
-        //    var id1 = db.Tables.Where((x) => x.Id == id).First();
-        //    NameList.Text = id1.book_name;
-        //    ISBNList.Text = id1.ISBN.ToString();
-        //    DataList.Text = id1.Publish_date.ToString();
-        //}
+        private void UTableID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32((sender as ComboBox).SelectedItem);
+            var id1 = db.Galleries.Where((x) => x.Id == id).First();
+            UTitle.Text = id1.Title;
+            UClient.Text = id1.Client;
+            UStartDate.Text = id1.Start_Date.ToString();
+            UFinishDate.Text = id1.Finish_Date.ToString();
+            UAddDate.Text = id1.Add_Date.ToString();
+        }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    if (IdList.SelectedItem == null)
-        //    {
-        //        MessageBox.Show("Combobox seçilməyib");
-        //        return;
-        //    }
-        //    int id = Convert.ToInt32(IdList.SelectedItem);
-        //    var id1 = db.Tables.Where((x) => x.Id == id).First();
-        //    db.Tables.Remove(id1);
-        //    db.SaveChanges();
-        //    read();
-        //}
+        private void UUpdate_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(UTableID.SelectedItem);
+            var id1 = db.Galleries.Where((x) => x.Id == id).First();
+            id1.Title = UTitle.Text;
+            id1.Client = UClient.Text;
+            id1.Start_Date = DateTime.Parse(UStartDate.Text);
+            id1.Finish_Date = DateTime.Parse(UFinishDate.Text);
+            id1.Add_Date = DateTime.Parse(UAddDate.Text);
+            db.SaveChanges();
+        }
 
-        //private void button2_Click(object sender, EventArgs e)
-        //{
-        //    if (IdList.SelectedItem == null)
-        //    {
-        //        MessageBox.Show("Olmaz");
-        //        return;
-        //    }
-        //    int id = Convert.ToInt32(IdList.SelectedItem);
-        //    var id1 = db.Tables.Where((x) => x.Id == id).First();
-        //    if (string.IsNullOrEmpty(textBox1.Text))
-        //    {
-
-        //    }
-        //    id1.book_name = textBox1.Text;
-        //    id1.ISBN = Convert.ToInt32(textBox2.Text);
-        //    id1.Publish_date = DateTime.Parse(textBox3.Text);
-        //    db.SaveChanges();
-        //}
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(UTableID.SelectedItem);
+            var id1 = db.Galleries.Where((x) => x.Id == id).First();
+            db.Galleries.Remove(id1);
+            db.SaveChanges();
+            read();
+        }
     }
 }

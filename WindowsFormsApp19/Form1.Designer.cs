@@ -53,25 +53,24 @@
             this.RFinishDate = new System.Windows.Forms.Label();
             this.RStartDate = new System.Windows.Forms.Label();
             this.RClient = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UTableID = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.UUpdate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.UAddDate = new System.Windows.Forms.TextBox();
+            this.UFinishDate = new System.Windows.Forms.TextBox();
+            this.UStartDate = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.UClient = new System.Windows.Forms.TextBox();
+            this.UTitle = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ProjectName
@@ -305,13 +304,14 @@
             this.RClient.TabIndex = 39;
             this.RClient.Text = "Text";
             // 
-            // comboBox1
+            // UTableID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(436, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(107, 21);
-            this.comboBox1.TabIndex = 40;
+            this.UTableID.FormattingEnabled = true;
+            this.UTableID.Location = new System.Drawing.Point(436, 92);
+            this.UTableID.Name = "UTableID";
+            this.UTableID.Size = new System.Drawing.Size(107, 21);
+            this.UTableID.TabIndex = 40;
+            this.UTableID.SelectedIndexChanged += new System.EventHandler(this.UTableID_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -319,37 +319,20 @@
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(432, 136);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 20);
+            this.label7.Size = new System.Drawing.Size(202, 20);
             this.label7.TabIndex = 54;
-            this.label7.Text = "Update your Tables";
+            this.label7.Text = "Update or Delete your Tables";
             // 
-            // button2
+            // UUpdate
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(436, 326);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 27);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(436, 289);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(107, 21);
-            this.comboBox2.TabIndex = 52;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(549, 289);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 20);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Category ID";
+            this.UUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UUpdate.Location = new System.Drawing.Point(436, 300);
+            this.UUpdate.Name = "UUpdate";
+            this.UUpdate.Size = new System.Drawing.Size(107, 27);
+            this.UUpdate.TabIndex = 53;
+            this.UUpdate.Text = "Update";
+            this.UUpdate.UseVisualStyleBackColor = true;
+            this.UUpdate.Click += new System.EventHandler(this.UUpdate_Click);
             // 
             // label13
             // 
@@ -381,26 +364,26 @@
             this.label15.TabIndex = 48;
             this.label15.Text = "Start Date";
             // 
-            // textBox1
+            // UAddDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(436, 263);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 20);
-            this.textBox1.TabIndex = 47;
+            this.UAddDate.Location = new System.Drawing.Point(436, 263);
+            this.UAddDate.Name = "UAddDate";
+            this.UAddDate.Size = new System.Drawing.Size(107, 20);
+            this.UAddDate.TabIndex = 47;
             // 
-            // textBox2
+            // UFinishDate
             // 
-            this.textBox2.Location = new System.Drawing.Point(436, 237);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 20);
-            this.textBox2.TabIndex = 46;
+            this.UFinishDate.Location = new System.Drawing.Point(436, 237);
+            this.UFinishDate.Name = "UFinishDate";
+            this.UFinishDate.Size = new System.Drawing.Size(107, 20);
+            this.UFinishDate.TabIndex = 46;
             // 
-            // textBox3
+            // UStartDate
             // 
-            this.textBox3.Location = new System.Drawing.Point(436, 211);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(107, 20);
-            this.textBox3.TabIndex = 45;
+            this.UStartDate.Location = new System.Drawing.Point(436, 211);
+            this.UStartDate.Name = "UStartDate";
+            this.UStartDate.Size = new System.Drawing.Size(107, 20);
+            this.UStartDate.TabIndex = 45;
             // 
             // label16
             // 
@@ -422,19 +405,19 @@
             this.label17.TabIndex = 43;
             this.label17.Text = "Client";
             // 
-            // textBox4
+            // UClient
             // 
-            this.textBox4.Location = new System.Drawing.Point(436, 185);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(107, 20);
-            this.textBox4.TabIndex = 42;
+            this.UClient.Location = new System.Drawing.Point(436, 185);
+            this.UClient.Name = "UClient";
+            this.UClient.Size = new System.Drawing.Size(107, 20);
+            this.UClient.TabIndex = 42;
             // 
-            // textBox5
+            // UTitle
             // 
-            this.textBox5.Location = new System.Drawing.Point(436, 159);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(107, 20);
-            this.textBox5.TabIndex = 41;
+            this.UTitle.Location = new System.Drawing.Point(436, 159);
+            this.UTitle.Name = "UTitle";
+            this.UTitle.Size = new System.Drawing.Size(107, 20);
+            this.UTitle.TabIndex = 41;
             // 
             // label18
             // 
@@ -462,9 +445,9 @@
             this.label20.Font = new System.Drawing.Font("Palatino Linotype", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.Location = new System.Drawing.Point(432, 64);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(87, 20);
+            this.label20.Size = new System.Drawing.Size(151, 20);
             this.label20.TabIndex = 57;
-            this.label20.Text = "and Update";
+            this.label20.Text = "and Update or Delete";
             // 
             // label21
             // 
@@ -476,31 +459,41 @@
             this.label21.TabIndex = 58;
             this.label21.Text = "Read your Tables";
             // 
+            // Delete
+            // 
+            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Delete.Location = new System.Drawing.Point(436, 333);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(107, 27);
+            this.Delete.TabIndex = 59;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(742, 441);
+            this.Controls.Add(this.Delete);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.UUpdate);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.UAddDate);
+            this.Controls.Add(this.UFinishDate);
+            this.Controls.Add(this.UStartDate);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.UClient);
+            this.Controls.Add(this.UTitle);
+            this.Controls.Add(this.UTableID);
             this.Controls.Add(this.RClient);
             this.Controls.Add(this.RStartDate);
             this.Controls.Add(this.RFinishDate);
@@ -561,25 +554,24 @@
         private System.Windows.Forms.Label RFinishDate;
         private System.Windows.Forms.Label RStartDate;
         private System.Windows.Forms.Label RClient;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox UTableID;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button UUpdate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox UAddDate;
+        private System.Windows.Forms.TextBox UFinishDate;
+        private System.Windows.Forms.TextBox UStartDate;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox UClient;
+        private System.Windows.Forms.TextBox UTitle;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button Delete;
     }
 }
 
